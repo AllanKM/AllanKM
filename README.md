@@ -1,7 +1,18 @@
-# AllanKM
+# Allan Medeiros
 
+**Senior Solutions Architect** · Porto, Portugal · Open to remote across Europe
 
-# 💻 Lang:
-![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white) 
- ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=java&logoColor=white) 
- ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white) 
+I lead **Spec-Driven Development (SDD) with AI coding agents** at Allianz Technology — defining the specs, guardrails, and governance that let autonomous agents ship production software safely inside a regulated enterprise.
+
+Previously IT Architect at IBM (5 years). 20+ years across banking, insurance, and logistics. Multi-cloud (Azure/AKS, GCP, AWS). Published researcher ([Google Scholar](https://scholar.google.com/citations?user=E5rZhPcAAAAJ)).
+
+### Looking for
+Chief Architect · Principal Architect · Head of Architecture · CTO · Head of AI Engineering · fractional / advisory
+
+### Links
+- Site: [allankm.github.io](https://allankm.github.io/)
+- LinkedIn: [linkedin.com/in/allankm](https://www.linkedin.com/in/allankm)
+- Scholar: [citations](https://scholar.google.com/citations?user=E5rZhPcAAAAJ)
+
+### Focus
+`Enterprise Architecture` · `Spec-Driven Development` · `AI Agents` · `Architecture Governance` · `Multi-cloud` · `Legacy Modernization` · `Kubernetes` · `Event Streaming`

@@ -2,7 +2,7 @@
 
 **Senior Solutions Architect** · Porto, Portugal · Open to remote across Europe
 
-I lead **Spec-Driven Development (SDD) with AI coding agents** at Allianz Technology — defining the specs, guardrails, and governance that let autonomous agents ship production software safely inside a regulated enterprise.
+I lead **Spec-Driven Development (SDD) with AI coding agents** — defining the specs, guardrails, and governance that let autonomous agents ship production software safely inside a regulated enterprise.
 
 Previously IT Architect at IBM (5 years). 20+ years across banking, insurance, and logistics. Multi-cloud (Azure/AKS, GCP, AWS). Published researcher ([Google Scholar](https://scholar.google.com/citations?user=E5rZhPcAAAAJ)).
 

@@ -1,5 +1,7 @@
 export type Advertiser = "agency" | "person" | "unknown";
 
+export type SellerRole = "owner" | "unspecified";
+
 export type SourceName = "OLX" | "Viva Real" | "Zap Imóveis";
 
 export type Building = {
@@ -19,6 +21,7 @@ export type Listing = {
   floor: number | null;
   price: number;
   advertiser: Advertiser;
+  seller: SellerRole;
   source: SourceName;
 };
 
@@ -39,10 +42,19 @@ export type MapStats = {
   semCoordenada: number;
 };
 
+export const ADVERTISER_KEYS: Advertiser[] = ["agency", "person", "unknown"];
+
 export const ADVERTISER_LABEL: Record<Advertiser, string> = {
   agency: "Imobiliária ou corretor",
   person: "Pessoa física",
   unknown: "Anunciante não identificado",
+};
+
+export const SELLER_KEYS: SellerRole[] = ["owner", "unspecified"];
+
+export const SELLER_LABEL: Record<SellerRole, string> = {
+  owner: "Proprietário",
+  unspecified: "Não informado",
 };
 
 export const EMPTY_FILTERS: Filters = {

@@ -1,5 +1,6 @@
 import { BOUNDS } from "./geo.ts";
 import { resolvePosition } from "./position.ts";
+import { mulberry32 } from "./rng.ts";
 import { sampleSpot } from "./streets.ts";
 import { computeStats, indexBuildings } from "./stats.ts";
 import type { Advertiser, Building, Dataset, Listing, SourceName } from "./types.ts";
@@ -47,17 +48,6 @@ const NAME_B = [
   "da Tijuca",
   "Dourado",
 ];
-
-function mulberry32(seed: number): () => number {
-  let state = seed >>> 0;
-  return () => {
-    state = (state + 0x6d2b79f5) >>> 0;
-    let value = state;
-    value = Math.imul(value ^ (value >>> 15), value | 1);
-    value ^= value + Math.imul(value ^ (value >>> 7), value | 61);
-    return ((value ^ (value >>> 14)) >>> 0) / 4294967296;
-  };
-}
 
 function floorPlan(): number[] {
   const groups: [number, number][] = [
@@ -166,12 +156,13 @@ export function buildDataset(seed = 20261105): Dataset {
   }
 
   const listings: Listing[] = [];
-  const push = (listing: Omit<Listing, "id" | "source">) => {
+  const push = (listing: Omit<Listing, "id" | "source" | "seller">) => {
     const id = `im-${listings.length}`;
     listings.push({
       ...listing,
       id,
       source: SOURCES[listings.length % SOURCES.length],
+      seller: "unspecified",
     });
   };
 
@@ -266,6 +257,14 @@ export function buildDataset(seed = 20261105): Dataset {
   );
   listings.forEach((listing, index) => {
     listing.advertiser = advertisers[index];
+  });
+
+  // Seller is drawn after price, coordinates, and advertiser, so those stay on the original seed path.
+  // The role is independent of who published the listing.
+  listings.forEach((listing) => {
+    const roll = rng();
+    const ownerChance = listing.advertiser === "person" ? 0.74 : listing.advertiser === "agency" ? 0.58 : 0.22;
+    listing.seller = roll < ownerChance ? "owner" : "unspecified";
   });
 
   const dataset: Dataset = { sample: true, buildings, listings };
